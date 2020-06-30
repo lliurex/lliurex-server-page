@@ -1,8 +1,27 @@
 <html>
-        <head></head>
-        <body>
-                Server page
-        </body>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% if title %}
+        <title>{{ title }} - Admin</title>
+        {% else %}
+        <title>Admin</title>
+        {% endif %}
+        <link rel="stylesheet" href="/static/style/main.css">
+        <link rel="stylesheet" href="{{ url_for('mainmodule.static',filename='style/main.css')}}">
+        <script src="/static/js/utils.js"></script>
+    </head>
+    <body>
+        <div id="grid-nav">
+                <div id="nav">
+                        <img src="{{ url_for('mainmodule.static',filename='images/logo.svg')}}" alt="">
+                        <img src="{{ url_for('mainmodule.static',filename='images/valentin.svg')}}" alt="">
+                </div>
+                <div id="content">
+                        {% for link in resources %}
+                                <h1>{{ link.name.default }}</h1>
+                        {% endfor%}
+                </div>
+    </div>
+    </body>
 </html>
-
