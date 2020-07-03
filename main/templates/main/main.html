@@ -7,20 +7,47 @@
         {% else %}
         <title>Admin</title>
         {% endif %}
-        <link rel="stylesheet" href="/static/style/main.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css')}}">
         <link rel="stylesheet" href="{{ url_for('mainmodule.static',filename='style/main.css')}}">
         <script src="/static/js/utils.js"></script>
     </head>
     <body>
         <div id="grid-nav">
                 <div id="nav">
-                        <img src="{{ url_for('mainmodule.static',filename='images/logo.svg')}}" alt="">
-                        <img src="{{ url_for('mainmodule.static',filename='images/valentin.svg')}}" alt="">
+                        <div class="servername">Aula1</div>
+                        <img class="valentin" src="{{ url_for('mainmodule.static',filename='images/valentin.svg')}}" alt="">
                 </div>
                 <div id="content">
-                        {% for link in resources %}
-                                <h1>{{ link.name.default }}</h1>
-                        {% endfor%}
+                        <div class="navbar">
+                                <div class="login">
+                                        {% if current_user.is_authenticated %}
+                                        <strong>{{ current_user.username }}</strong>
+                                        <a class="" href="{{ url_for('logout') }}">{{ _('Logout') }}</a>              
+                                        {% else %}
+                                        <a class="" href="{{ url_for('login') }}">{{ _('Login') }}</a>
+                                        {% endif%}
+                                </div>
+                        </div>
+
+                        <div class="bookmarkswrapper">
+                                <img class="logo" src="{{ url_for('mainmodule.static',filename='images/logo.svg')}}" alt="">
+                                <div class="search">
+                                        <form method="get" action="https://duckduckgo.com/">
+                                                <input name="q" autocomplete="on" placeholder={{_('Search...')}}>
+                                        </form>
+                                </div>
+                                <div class="bookmarks">
+                                        {% for link in resources %}
+                                        <a href="{{link.link}}" title="{{link.description.default}}">
+                                                <div class='cardlink'>
+                                                        <img class="cardicon" src="{{ url_for('mainmodule.icons',path=link.icon)}}" alt="">
+                                                        <div class="cardname">{{ link.name.default }}</div>
+                                                        <!-- <div class="cardtooltip"></div> -->
+                                                </div>
+                                        </a>
+                                        {% endfor%}
+                                </div>
+                        </div>
                 </div>
     </div>
     </body>

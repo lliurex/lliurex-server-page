@@ -16,8 +16,6 @@ OVERRIDE_PATH = '/var/lib/lliurex-www'
 OVERRIDE_LINKS_PATH = os_path_join(OVERRIDE_PATH,'links')
 ICONS_PATH = os_path_join(BASE_PATH,'icons')
 
-@validate_groups(['admins'])
-@login_required
 def main():
     resources = get_resources()
     return render_template('main/main.html', resources=resources)
@@ -25,11 +23,11 @@ def main():
 def get_resources():
     links = {}
     for link in glob(os_path_join(LINKS_PATH,'*.json')):
-        with codecs_open(link,'r') as fd:
+        with codecs_open(link,encoding='utf-8') as fd:
             links[basename(link)] = json_load(fd)
     
     for link in glob(os_path_join(OVERRIDE_LINKS_PATH,'*.json')):
-        with codecs_open(link,'r') as fd:
+        with codecs_open(link,encoding='utf-8') as fd:
             basename_link = basename(link)
             metadata = json_load(fd)
             if basename_link in links:
@@ -39,6 +37,6 @@ def get_resources():
 
     return sorted(links.values(), key=lambda x: x['order'] if 'order' in x else 999)
 
-# @exportmodule.route('/static/<path:path>')
-# def send_js(path):
-#     return send_from_directory(ICONS_PATH, path)
+@exportmodule.route('/icons/<path:path>')
+def icons(path):
+    return send_from_directory(ICONS_PATH, path)
