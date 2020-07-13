@@ -1,0 +1,31 @@
+{% extends 'admin/main/main.html'%}
+
+{% block head%}
+
+    <link rel="stylesheet" href="{{ url_for('admin_mainmodule.static',filename='admin.css')}}">
+    <style>
+        form{
+            margin: 0 auto;
+            min-width: 400px;
+        }
+        input[type="submit"]{
+            margin-top:3em;
+        }
+        label{
+            margin-top:1em;
+        }
+    </style>
+
+{% endblock %}
+
+
+{% block maincontent%}
+<form action="" method="POST">
+    {{ form.csrf_token }}
+    {{form.link.label}}{{ form.link() }}
+    {{form.name.label}}{{ form.name() }}
+    {{form.description.label}}{{ form.description() }}
+    {{form.icon.label}}{{ form.icon() }}
+    <input type="submit" value="send">
+</form>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'admin/main/main.html'%}
+
+
+{% block head%}
+
+    <link rel="stylesheet" href="{{ url_for('admin_mainmodule.static',filename='admin.css')}}">
+    <style>
+        form{
+            margin: 0 auto;
+            min-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form img{
+            width: 110px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .horizontal-flex{
+            margin-top:1em;
+        }
+
+        a{
+            height: 100%;
+
+        }
+
+    </style>
+
+{% endblock %}
+
+
+
+{% block maincontent %}
+    <form action="" method="POST">
+        {{form.csrf_token}}
+        <h3>You want delete this link?</h3>
+        {{ form.csrf_token }}
+        {% if form.icon.data.startswith('http') %}
+        <img class="cardicon" src="{{ form.icon.data }}" alt="">
+        {% else %}
+        <img class="cardicon" src="{{ url_for('mainmodule.icons',path=form.icon.data) }}" alt="">
+        {% endif%}
+        <div>{{ form.name.data }}</div>
+        <div class="horizontal-flex">
+            <input type="submit" value="Ok">
+        <a href="{{url_for('admin_mainmodule.main')}}" class="btn">Cancel</a>
+        </div>
+        
+    </form>
+{% endblock %}
