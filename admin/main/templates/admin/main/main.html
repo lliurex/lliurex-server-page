@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+
+{% block head%}
+    <link rel="stylesheet" href="{{ url_for('admin_mainmodule.static',filename='admin.css')}}">
+{% endblock %}
+
+{% block content%}
+<div id="grid-nav">
+
+    <div id="nav">
+        <img class="logo" src="{% block logohead %}{{ url_for('mainmodule.static',filename='images/admin-banner2.jpg')}}{% endblock %}" alt="">
+        <ul>
+            <!-- <li><a href="{{ url_for('admin_mainmodule.main') }}">Server page</a></li> -->
+            {% for x in list_menu %}
+                <li class="{% if x.selected == true %}selected{%endif%}"><a class="" href="{{ url_for(x.link) }}">{{ x.name.default }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    
+    <div id="content">
+        <div class="navbar">
+            <div class="login">
+                    {% if current_user.is_authenticated %}
+                    <div class="dropdown usermenu" >
+                            <div class="dropbutton">
+                                    {{ current_user.username }}
+                            </div>
+                            <div class="dropdown-content">
+                                    <a class="" href="{{ url_for('logout') }}">{{ _('Logout') }}</a>              
+                            </div>
+                    </div>
+                    {% else %}
+                    <div class="usermenu">
+                            <a class="dropbutton" href="{{ url_for('login') }}">{{ _('Login') }}</a>
+                    </div>
+                    
+                    {% endif%}
+            </div>
+        </div>
+        {% block maincontent %}
+        <form action="" method="POST">
+            {{ form.csrf_token }}
+            <div class="horizontal-flex">
+            <div>
+                <div class="spacebetween">
+                    <strong>Links</strong>
+                    <a id="newlink" href='{{ url_for('admin_mainmodule.editlink')}}'>+</a>
+                </div>
+                <div class="list">
+                {% for x in form.listlink %}
+                    <div class="listitem {% if not x.visibility.data %}hidden{%endif%}">
+                        {% if x.icon.data.startswith('http') %}
+                        <img class="cardicon" src="{{ x.icon.data }}" alt="">
+                        {% else %}
+                        <img class="cardicon" src="{{ url_for('mainmodule.icons',path=x.icon.data) }}" alt="">
+                        {% endif%}
+                        <div class="name">{{ x.form.name.data }}</div>
+                        <div class="dropdown">
+                            <button class="dropbutton">...</button>
+                            <div class="dropdown-content">
+                                {% if x.editable.data %}
+                            <a href='{{ url_for('admin_mainmodule.editlink', linkpath=x.filename.data)}}'>Edit</a>
+                            <a href='{{ url_for('admin_mainmodule.deletelink', linkpath=x.filename.data)}}'>Delete</a>
+                        {% endif %}
+                            <a href="#" onclick='hidelink(this)' data-filename="{{x.filename.data}}">Hide</a>
+                            </div>
+
+                        </div>
+                        
+                        <br/>
+                    </div>
+            
+                {% endfor %}
+                </div>
+            </div>
+        
+            <div>
+                <div class="spacebetween">
+                    <strong>RSS</strong>
+                    <div id="newrss" onclick="appendrss()">+</div>
+                </div>
+                <div id="listrss" class="list">
+                    {% for x in form.listrss %}
+                        <div class="listitem">
+                            {{x()}}
+                            <div class="dropdown">
+                                <button class="dropbutton">...</button>
+                                <div class="dropdown-content">
+                                    <a href="#" onclick="deleterss(this)">Remove</a>
+                                </div>
+    
+                            </div>
+                            
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+                <input type="submit" value="Save">
+            </form>
+    </div>
+
+
+
+</div>
+
+<script>
+
+    {% if form.listrss | length > 0 %}
+        var lastrss = parseInt("{{form.listrss[-1].id}}".replace('listrss-',''));
+    {% else %}
+        var lastrss = 0;
+    {% endif %}
+
+    function appendrss(){
+        let x = document.querySelector('#listrss');
+        lastrss = lastrss + 1;
+        let identifier = 'listrss-' + lastrss;
+        
+        let entry = document.createElement('div');
+        entry.classList = ['listitem']
+        entry.innerHTML = `<input id='${identifier}' name='${identifier}' type='text' value=''><div class="dropdown">
+                                <button class="dropbutton">...</button>
+                                <div class="dropdown-content">
+                                    <a href="#" onclick="deleterss(this)">Remove</a>
+                                </div>
+    
+                            </div>`;
+        x.appendChild(entry);
+    }
+
+    function hidelink(element){
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            element.closest('.listitem').classList.toggle('hidden');
+        }
+    };
+    xhttp.open("GET","{{ url_for('admin_mainmodule.hidelink',linkpath='None') | replace(None,'')}}" +element.dataset['filename']);
+    xhttp.send();
+}
+
+    function deleterss(element){
+        element.closest('.listitem').remove();
+    }
+
+</script>
+    {% endblock %}
+{% endblock %}  

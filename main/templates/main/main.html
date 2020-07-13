@@ -9,22 +9,41 @@
         {% endif %}
         <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css')}}">
         <link rel="stylesheet" href="{{ url_for('mainmodule.static',filename='style/main.css')}}">
-        <script src="/static/js/utils.js"></script>
+        <script src="{{ url_for('static',filename='js/utils.js') }}"></script>
+        
     </head>
     <body>
         <div id="grid-nav">
                 <div id="nav">
-                        <div class="servername">Aula1</div>
+                        <div class="servername">{{ servername }}</div>
                         <img class="valentin" src="{{ url_for('mainmodule.static',filename='images/valentin.svg')}}" alt="">
                 </div>
                 <div id="content">
                         <div class="navbar">
+                                <div class="dropdown news">
+                                        <div class="notification"></div>
+                                        <img id="newsbutton" onmouseover="setreadnews()" class="dropbutton" src="{{ url_for('mainmodule.static',filename='images/news.svg')}}" alt="">
+                                        <div id="newslist" class="dropdown-content">
+                                        </div>
+                                </div>
                                 <div class="login">
                                         {% if current_user.is_authenticated %}
-                                        <strong>{{ current_user.username }}</strong>
-                                        <a class="" href="{{ url_for('logout') }}">{{ _('Logout') }}</a>              
+                                        <div class="dropdown usermenu" >
+                                                <div class="dropbutton">
+                                                        {{ current_user.username }}
+                                                </div>
+                                                <div class="dropdown-content">
+                                                        {% for x in list_menu %}
+                                                        <a class="" href="{{ url_for(x.link) }}">{{ x.name.default }}</a>
+                                                        {% endfor %}
+                                                        <a class="" href="{{ url_for('logout') }}">{{ _('Logout') }}</a>
+                                                </div>
+                                        </div>
                                         {% else %}
-                                        <a class="" href="{{ url_for('login') }}">{{ _('Login') }}</a>
+                                        <div class="usermenu">
+                                                <a class="dropbutton" href="{{ url_for('login') }}">{{ _('Login') }}</a>
+                                        </div>
+                                        
                                         {% endif%}
                                 </div>
                         </div>
@@ -38,17 +57,27 @@
                                 </div>
                                 <div class="bookmarks">
                                         {% for link in resources %}
+                                        {% if link.visibility %}
                                         <a href="{{link.link}}" title="{{link.description.default}}">
                                                 <div class='cardlink'>
-                                                        <img class="cardicon" src="{{ url_for('mainmodule.icons',path=link.icon)}}" alt="">
+                                                        {% if link.icon.startswith('http') %}
+                                                        <img class="cardicon" src="{{ link.icon }}" alt="">
+                                                        {% else %}
+                                                        <img class="cardicon" src="{{ url_for('mainmodule.icons',path=link.icon) }}" alt="">
+                                                        {% endif%}
                                                         <div class="cardname">{{ link.name.default }}</div>
                                                         <!-- <div class="cardtooltip"></div> -->
                                                 </div>
                                         </a>
+                                        {% endif %}
                                         {% endfor%}
                                 </div>
                         </div>
                 </div>
     </div>
+    <script>
+            urlfeed = "{{ url_for('mainmodule.get_news')}}";
+    </script>
+    <script src="{{ url_for('mainmodule.static',filename='js/rss.js')}}"></script>
     </body>
 </html>
