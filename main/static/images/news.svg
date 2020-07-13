@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="80mm"
+   height="80mm"
+   viewBox="0 0 80 80"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="news.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       x2="407.69"
+       y2="504.13"
+       x1="407.63"
+       y1="543.77"
+       id="a"
+       gradientTransform="matrix(0.26458333,0,0,0.26458333,-87.719561,162.67812)">
+      <stop
+         id="stop818"
+         stop-color="#c6cdd1" />
+      <stop
+         id="stop820"
+         stop-color="#e0e5e7"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       x2="401.92"
+       y2="532.44"
+       x1="401.58"
+       y1="513.81"
+       id="b"
+       gradientTransform="matrix(0.26458333,0,0,0.26458333,-101.75121,152.06084)">
+      <stop
+         id="stop823"
+         stop-color="#9559b6" />
+      <stop
+         id="stop825"
+         stop-color="#8e44ad"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       x2="417.53"
+       y2="533.46"
+       x1="417.87"
+       y1="516.47"
+       id="c"
+       gradientTransform="matrix(0.26458333,0,0,0.26458333,-101.75121,152.06084)">
+      <stop
+         id="stop828"
+         stop-color="#1d99f3" />
+      <stop
+         id="stop830"
+         stop-color="#2972a7"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       x2="38.26"
+       y2="35.796"
+       x1="29.439"
+       y1="26.03"
+       id="d"
+       gradientTransform="matrix(0.26458333,0,0,0.26458333,5.5393146,283.75389)">
+      <stop
+         id="stop833"
+         stop-color="#292c2f" />
+      <stop
+         id="stop835"
+         stop-opacity="0"
+         stop-color="#292c2f"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       x2="407.69"
+       y2="504.13"
+       x1="407.63"
+       y1="543.77002"
+       id="a-1"
+       gradientTransform="matrix(0.26458333,0,0,0.26458333,-98.129151,158.23851)"
+       spreadMethod="pad">
+      <stop
+         id="stop818-2"
+         stop-color="#c6cdd1" />
+      <stop
+         id="stop820-7"
+         stop-color="#e0e5e7"
+         offset="1" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="79.947741"
+     inkscape:cy="118.93757"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
+     inkscape:window-x="0"
+     inkscape:window-y="36"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="translate(3.7041668,3.7041668)"
+       id="g871">
+      <rect
+         style="fill:#232629;stroke-width:0.315375;stroke-linecap:round"
+         id="rect867"
+         width="66.65696"
+         height="66.65696"
+         x="4.04498"
+         y="3.2386632"
+         ry="2.1761582"
+         rx="2.0516639" />
+      <rect
+         y="6.2710104"
+         x="7.0773282"
+         height="60.59227"
+         width="60.59227"
+         id="rect869"
+         style="fill:#fcfcfc;stroke-width:0.28668;stroke-linecap:round"
+         ry="2.4643583"
+         rx="2.29584" />
+    </g>
+    <g
+       id="g865">
+      <rect
+         rx="2.0516639"
+         ry="2.1761582"
+         y="3.2386632"
+         x="4.04498"
+         height="66.65696"
+         width="66.65696"
+         id="rect835"
+         style="fill:#232629;stroke-width:0.315375;stroke-linecap:round" />
+      <rect
+         rx="2.29584"
+         ry="2.4643583"
+         style="fill:#fcfcfc;stroke-width:0.28668;stroke-linecap:round"
+         id="rect839"
+         width="60.59227"
+         height="60.59227"
+         x="7.0773282"
+         y="6.2710104" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1139px;line-height:1.25;font-family:Noto;-inkscape-font-specification:Noto;letter-spacing:0px;word-spacing:0px;stroke-width:0.242596"
+       x="10.231879"
+       y="27.445108"
+       id="text843"><tspan
+         sodipodi:role="line"
+         id="tspan841"
+         x="10.231879"
+         y="27.445108"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.1139px;font-family:Noto;-inkscape-font-specification:Noto;stroke-width:0.242596">NEWS</tspan></text>
+    <rect
+       y="34.705975"
+       x="10.412372"
+       height="27.265228"
+       width="23.666536"
+       id="rect847"
+       style="fill:#232629;stroke-width:2.16847;stroke-linecap:round" />
+    <rect
+       style="fill:#fcfcfc;stroke-width:1.92938;stroke-linecap:round"
+       id="rect849"
+       width="21.057188"
+       height="24.259108"
+       x="11.717046"
+       y="36.209034" />
+    <text
+       transform="matrix(0.91689861,0,0,0.91689861,0.70834436,-6.5876277)"
+       id="text853"
+       y="40.998726"
+       x="39.568878"
+       style="font-size:10.5833px;line-height:0;font-family:Noto;-inkscape-font-specification:Noto;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:34.0907;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         x="39.568878"
+         y="40.998726"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">
+</tspan></tspan><tspan
+         x="39.568878"
+         y="44.24262"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">
+</tspan></tspan><tspan
+         x="39.568878"
+         y="47.486513"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">Heroe salva de </tspan></tspan><tspan
+         x="39.568878"
+         y="50.730405"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">nuevo el mundo..
+</tspan></tspan><tspan
+         x="39.568878"
+         y="53.974298"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">La amenaza esta </tspan></tspan><tspan
+         x="39.568878"
+         y="57.218191"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">vez fue un tazon </tspan></tspan><tspan
+         x="39.568878"
+         y="60.462083"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">de ramen que iba </tspan></tspan><tspan
+         x="39.568878"
+         y="63.705976"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">a conquistar el </tspan></tspan><tspan
+         x="39.568878"
+         y="66.949869"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">mundo con su </tspan></tspan><tspan
+         x="39.568878"
+         y="70.193765"><tspan
+           style="font-size:3.52778px;line-height:0.8;stroke-width:0.264583">sabor 
+</tspan></tspan></text>
+    <text
+       style="font-size:3.175px;font-family:'Droid Sans';stroke-width:0.264583"
+       x="186.00812"
+       y="-113.98257"
+       id="text842" />
+    <path
+       sodipodi:nodetypes="cccccccccsscccccccccc"
+       inkscape:connector-curvature="0"
+       id="path4136-4"
+       d="m 21.974336,44.275327 c 0.02342,0.479833 0.09163,0.959812 0.03337,1.439645 l -2.377183,-0.970995 c 0.302584,0.330359 0.571611,0.660982 0.772022,0.991487 -2.651169,0.108022 -4.864124,2.097934 -5.234835,4.746661 -0.264111,0.05416 -0.604289,0.06821 -1.368412,-0.04508 0.166218,4.767651 4.251658,6.322022 6.824735,6.325242 2.470419,-0.05796 4.917886,-1.880749 5.415137,-4.479534 0.425588,0.173888 0.87685,0.26376 1.332122,0.265516 2.09202,0 3.787902,-1.823195 3.787932,-4.072038 0,-2.249222 -1.695912,-4.072272 -3.787932,-4.072272 -1.482357,0 -2.826188,0.931856 -3.44156,2.378469 l -1.955515,-2.50786 z m -8.597466,4.370341 c -0.01025,0 -0.02137,0 -0.03156,0.01171 -0.16982,0.04508 -0.229129,0.378398 -0.132407,0.744677 0.09669,0.366688 0.312777,0.627404 0.482631,0.582585 0.169849,-0.04362 0.229159,-0.378252 0.132466,-0.744794 -0.08999,-0.34081 -0.284926,-0.594675 -0.45108,-0.58721 z"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.03643;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker:none;enable-background:accumulate" />
+  </g>
+</svg>
