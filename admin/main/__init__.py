@@ -78,8 +78,6 @@ def editlink(linkpath):
                 config = {**resource, **config}
                 json_dump(config, fd, indent=4)
             return redirect(url_for('admin_mainmodule.main'))
-        else:
-            print('adios')
     else:
         if linkpath != 'None':
             resource = get_resource(linkpath)
