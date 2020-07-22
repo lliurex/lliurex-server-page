@@ -11,7 +11,7 @@
     <div id="nav">
         <img class="logo" src="{% block logohead %}{{ url_for('mainmodule.static',filename='images/admin-banner2.jpg')}}{% endblock %}" alt="">
         <ul>
-            <li><a href="{{ url_for('mainmodule.main') }}">Home</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
             {% for x in list_menu %}
                 <li class="{% if x.selected == true %}selected{%endif%}"><a class="" href="{{ url_for(x.link) }}">{{ x.name.default }}</a></li>
             {% endfor %}
