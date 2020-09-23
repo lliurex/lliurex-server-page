@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, send_from_directory,url_for, jsonify
+from flask import Blueprint, render_template, send_from_directory,url_for, jsonify, request
 from flask_login import login_required
 
 from os.path import join as os_path_join, basename, exists as os_path_exists
@@ -48,6 +48,7 @@ def get_menu_list(selected=None):
 
 
 def get_resource(aux_filename):
+    custom_easysite_url=request.url_root.split('srv')[0]
     result = {}
     filename = basename(aux_filename)
     link = os_path_join(LINKS_PATH,filename)
@@ -55,7 +56,7 @@ def get_resource(aux_filename):
         with codecs_open(link,encoding='utf-8') as fd:
             result = json_load(fd)
             result['editable'] = False
-            
+            result['link']=result['link'].replace('http://server/easy-',custom_easysite_url+'easy-')
     link = os_path_join(OVERRIDE_LINKS_PATH,filename)
     if os_path_exists(link):
         with codecs_open(link,encoding='utf-8') as fd:
@@ -69,6 +70,8 @@ def get_resource(aux_filename):
         result['editable'] = True
     if 'visibility' not in result:
         result['visibility'] = True
+
+    result['link']=result['link'].replace('http://server/easy-',custom_easysite_url+'easy-')
     return result
 
 # def get_resources():
