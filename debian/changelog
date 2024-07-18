@@ -1,3 +1,9 @@
+lliurex-server-page (0.2.6) focal; urgency=medium
+
+  * Reverse 0.2.5
+
+ -- Juanma1980 <juanma1980@gmail.com>  Thu, 18 Jul 2024 14:34:27 +0200
+
 lliurex-server-page (0.2.5) focal; urgency=medium
 
   * Replace duckduckgo with qwant
